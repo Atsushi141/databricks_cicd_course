@@ -3,18 +3,16 @@ on:
     branches-ignore:
       - main
 
-env:
-  DATABRICKS_HOST: 'Workflow Environment Variable 1'
-  ARM_CLIENT_ID: ''
-  ARM_TENANT_ID: ''
-  ARM_CLIENT_SECRET: ''
-  
 jobs:
   build-and-test:
     name: Build and Test Application
     runs-on: ubuntu-latest
+    environment: DEVELOPMENT
     env:
-      NODE_ENV: test
+      DATABRICKS_HOST: '${{ vars.DATABRICKS_HOST }}'
+      ARM_CLIENT_ID: '${{ vars.AZURE_CLIENT_ID }}'
+      ARM_TENANT_ID: '${{ vars.AZURE_TENANT_ID }}'
+      ARM_CLIENT_SECRET: '${{ vars.AZURE_CLIENT_SECRET }}'
 
     steps:
       - name: Checkout code
