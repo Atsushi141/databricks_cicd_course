@@ -1,7 +1,9 @@
 from setuptools import setup, find_packages
 
+import src
+
 setup(
-    name="dab",
+    name="dab_project",
     version="0.0.1",
     description="",
     author="",
