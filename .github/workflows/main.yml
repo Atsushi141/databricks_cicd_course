@@ -11,7 +11,7 @@ jobs:
     env:
       DATABRICKS_HOST: '${{ vars.DATABRICKS_HOST }}'
       DATABRICKS_CLIENT_ID: '${{ vars.AZURE_CLIENT_ID }}'
-      ARM_TENANT_ID: '{{ vars.AZURE_TENANT_ID }}'
+      ARM_TENANT_ID: '${{ vars.AZURE_TENANT_ID }}'
       # DATABRICKS_ACCOUNT_ID: '9b640230-5171-41ad-8787-76b533b6bf26'
       DATABRICKS_CLIENT_SECRET: '${{ vars.AZURE_CLIENT_SECRET }}'
 
@@ -31,7 +31,7 @@ jobs:
         run: |
           echo ${DATABRICKS_HOST}
           echo ${DATABRICKS_CLIENT_ID}
-          echo ${DATABRICKS_ACCOUNT_ID}
+          echo ${ARM_CLIENT_ID}
 
       - name: Databricks Bundle Deploy
         run: databricks bundle deploy
