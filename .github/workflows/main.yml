@@ -21,5 +21,11 @@ jobs:
       - name: Databricks CLI Setup
         uses: databricks/setup-cli@main
 
+      - name: debug
+        run: |
+          echo ${DATABRICKS_HOST}
+          echo ${DATABRICKS_CLIENT_ID}
+          echo ${DATABRICKS_ACCOUNT_ID}
+
       - name: Databricks Bundle Deploy
         run: databricks bundle deploy
