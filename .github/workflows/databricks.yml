@@ -2,7 +2,10 @@ name: Databricks Deploy
 on:
   workflow_call:
     inputs:
-      target-env:
+      target-gh-env:
+        required: true
+        type: string
+      target-databricks-workspace:
         required: true
         type: string
 
