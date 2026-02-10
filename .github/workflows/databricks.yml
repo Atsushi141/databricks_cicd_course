@@ -34,5 +34,8 @@ jobs:
           azure_client_secret = ${{ secrets.AZURE_CLIENT_SECRET }}
           EOF
 
+      - name: debug
+        run: cat ~/.databrickscfg
+
       - name: Databricks Bundle Deploy
         run: databricks bundle deploy -t ${{ inputs.target-env }} -p ${{ inputs.target-env }}
